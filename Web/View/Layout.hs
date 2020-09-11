@@ -36,7 +36,9 @@ stylesheets = do
         <link rel="stylesheet" href="/app.css"/>
     |]
     when (isProduction FrameworkConfig.environment) [hsx|
-        <link rel="stylesheet" href="/prod.css"/>
+        <link rel="stylesheet" href="/vendor/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/vendor/flatpickr.min.css"/>
+        <link rel="stylesheet" href="/app.css"/>
     |]
 
 scripts = do
@@ -51,15 +53,14 @@ scripts = do
         <script src="/vendor/morphdom-umd.min.js"></script>
     |]
     when (isProduction FrameworkConfig.environment) [hsx|
-        <script src="/prod.js"></script>
     |]
 
 
 metaTags = [hsx|
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta property="og:title" content="App"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="TODO"/>
-    <meta property="og:description" content="TODO"/>
+    <meta property="og:title" content="hi, i'm daniel!"/>
+    <meta property="og:type" content="homepage"/>
+    <meta property="og:url" content="sonnenberg.dev"/>
+    <meta property="og:description" content="welcome to my dev blog. i'm daniel by the way."/>
 |]
