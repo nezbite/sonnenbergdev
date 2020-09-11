@@ -15,3 +15,7 @@ data ViewContext = ViewContext
     , controllerContext :: ControllerSupport.ControllerContext
     , layout :: Layout
     }
+
+data StaticPagesController
+    = ShowHomeAction
+    deriving (Eq, Show, Data)

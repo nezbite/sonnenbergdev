@@ -1,0 +1,19 @@
+.welcome {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.funny-easteregg {
+    color: white;
+    animation-name: blend;
+    animation-duration: 10s;
+    animation-delay: 3s;
+}
+
+@keyframes blend {
+    from {color: white;}
+    to {color: black;}
+}
