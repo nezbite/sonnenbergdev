@@ -11,6 +11,7 @@ import IHP.Welcome.Controller
 instance FrontController WebApplication where
     controllers = 
         [ startPage ShowHomeAction
+        -- Generator Marker
         , parseRoute @StaticPagesController
         ]
 

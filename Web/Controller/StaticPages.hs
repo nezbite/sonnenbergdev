@@ -7,6 +7,3 @@ instance Controller StaticPagesController where
 
     action ShowHomeAction = do
         render HomeView
-
-buildStaticPage staticPage = staticPage
-    |> fill @'[]

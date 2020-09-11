@@ -19,7 +19,7 @@ defaultLayout inner = H.docTypeHtml ! A.lang "en" $ [hsx|
     {stylesheets}
     {scripts}
 
-    <title>App</title>
+    <title>hi, i'm daniel!</title>
 </head>
 <body>
     <div class="container mt-4">
