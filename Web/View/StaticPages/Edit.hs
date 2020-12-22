@@ -3,7 +3,7 @@ import Web.View.Prelude
 
 data EditView = EditView { staticPage :: StaticPage }
 
-instance View EditView ViewContext where
+instance View EditView where
     html EditView { .. } = [hsx|
         <nav>
             <ol class="breadcrumb">

@@ -7,15 +7,30 @@ import Application.Helper.Controller
 import IHP.ViewSupport
 import Generated.Types
 
-data WebApplication = WebApplication deriving (Eq, Show)
+import IHP.LoginSupport.Types
+import Generated.Types
 
-data ViewContext = ViewContext
-    { requestContext :: ControllerSupport.RequestContext
-    , flashMessages :: [IHP.Controller.Session.FlashMessage]
-    , controllerContext :: ControllerSupport.ControllerContext
-    , layout :: Layout
-    }
+instance HasNewSessionUrl User where
+    newSessionUrl _ = "/NewSession"
+
+data SessionsController
+    = NewSessionAction
+    | CreateSessionAction
+    | DeleteSessionAction
+    deriving (Eq, Show, Data)
+
+data WebApplication = WebApplication deriving (Eq, Show)
 
 data StaticPagesController
     = ShowHomeAction
+    deriving (Eq, Show, Data)
+
+data UsersController
+    = UsersAction
+    | NewUserAction
+    | ShowUserAction { userId :: !(Id User) }
+    | CreateUserAction
+    | EditUserAction { userId :: !(Id User) }
+    | UpdateUserAction { userId :: !(Id User) }
+    | DeleteUserAction { userId :: !(Id User) }
     deriving (Eq, Show, Data)
