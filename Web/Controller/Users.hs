@@ -46,7 +46,7 @@ instance Controller UsersController where
                         |> set #passwordHash hashed
                         |> createRecord
                     setSuccessMessage "Registration successful"
-                    redirectTo UsersAction
+                    redirectTo NewSessionAction
 
     action DeleteUserAction { userId } = do
         user <- fetch userId

@@ -1,21 +1,5 @@
-body {
-    background: rgba(6,28,87,1);
-    background: linear-gradient(0deg, rgb(3, 5, 53) 0%, rgb(9, 50, 121) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: rgb(220,224,0);
-}
-
-.welcome {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
 .funny-easteregg {
-    color: rgba(6,28,87,1);
+    color: white;
     animation-name: blend;
     animation-duration: 10s;
     animation-delay: 3s;
@@ -23,6 +7,22 @@ body {
 }
 
 @keyframes blend {
-    from {color: rgba(6,28,87,1);}
-    to {color: white;}
+    from {color: white;}
+    to {color: black;}
+}
+
+.big-button {
+    color: #444;
+    background-color: white;
+    transition: .15s;
+    box-shadow: none;
+    margin-top: 5px;
+}
+
+.big-button:hover {
+    margin-top: 0px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
 }

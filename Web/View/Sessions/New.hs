@@ -4,28 +4,28 @@ import IHP.AuthSupport.View.Sessions.New
 
 instance View (NewView User) where
     html NewView { .. } = [hsx|
-        <div class="h-100" id="sessions-new">
-            <div class="d-flex align-items-center">
-                <div class="w-100">
-                    <div style="max-width: 400px" class="mx-auto mb-5">
-                        {renderFlashMessages}
-                        <h5>Please login:</h5>
-                        {renderForm user}
-                    </div>
-                </div>
-            </div>
+        <div class="d-flex justify-content-center align-items-center">
+            {renderForm user}
         </div>
     |]
 
 renderForm :: User -> Html
 renderForm user = [hsx|
-    <form method="POST" action={CreateSessionAction}>
-        <div class="form-group">
-            <input name="email" value={get #email user} type="email" class="form-control" placeholder="E-Mail"/>
-        </div>
-        <div class="form-group">
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-    </form>
+    <div class="shadow p-5 rounded w-50">
+        <h1>Login</h1>
+        <form method="POST" action={CreateSessionAction}>
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input id="email" name="email" value={get #email user} type="email" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" class="form-control"/>
+            </div>
+            <div class="d-flex justify-content-end align-items-center">
+                <a href={NewUserAction} class="mr-4 text-dark">Sign up</a>
+                <button type="submit" class="btn btn-outline-dark">Login</button>
+            </div>
+        </form>
+    </div>
 |]

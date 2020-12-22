@@ -5,7 +5,7 @@ data NewView = NewView { user :: User }
 
 instance View NewView where
     html NewView { .. } = [hsx|
-        <div class="d-flex justify-content-center align-items-center" style="height: 90vh">
+        <div class="d-flex justify-content-center align-items-center">
             {renderForm user}
         </div>
     |]
@@ -25,6 +25,9 @@ renderForm user = formFor user [hsx|
                 {(textField #passwordHash) {fieldName = "password2", fieldLabel = "Repeat Password"}}
             </div>
         </div>
-        {submitButton {label = "Sign up"}}
+        <div class="d-flex justify-content-end align-items-center">
+            <a href={NewSessionAction} class="mr-4 text-dark">Login</a>
+            <button class="btn btn-outline-dark">Sign up</button>
+        </div>
     </div>
 |]
