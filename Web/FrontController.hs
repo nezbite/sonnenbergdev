@@ -16,7 +16,7 @@ import IHP.Welcome.Controller
 
 instance FrontController WebApplication where
     controllers = 
-        [ startPage ShowHomeAction
+        [ startPage HomeAction
         , parseRoute @SessionsController
         -- Generator Marker
         , parseRoute @UsersController

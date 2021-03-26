@@ -1,3 +1,7 @@
+body {
+    font-stretch:semi-expanded;
+}
+
 .funny-easteregg {
     color: white;
     animation-name: blend;
@@ -16,13 +20,30 @@
     background-color: white;
     transition: .15s;
     box-shadow: none;
-    margin-top: 5px;
 }
 
 .big-button:hover {
-    margin-top: 0px;
     color: black;
     background-color: white;
     text-decoration: none;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
 }
+
+.big-button:hover .youtube {
+    color: red;
+    transition: .15s;
+}
+
+.big-button:hover .twitter {
+    color: #00acee;
+    transition: .15s;
+}
+
+@media (min-width: 462px) { 
+    .big-button:hover {
+        margin-top: 0px;
+    }
+    .big-button {
+        margin-top: 10px;
+    }
+ }

@@ -22,7 +22,8 @@ data SessionsController
 data WebApplication = WebApplication deriving (Eq, Show)
 
 data StaticPagesController
-    = ShowHomeAction
+    = HomeAction
+    | AboutAction
     deriving (Eq, Show, Data)
 
 data UsersController
